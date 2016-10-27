@@ -1,3 +1,3 @@
-﻿# BlogRestApi
+﻿# Server API
 
 
