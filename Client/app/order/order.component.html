@@ -1,0 +1,21 @@
+﻿<!--<h3>{{title}}</h3>-->
+
+<table>
+    <thead>
+        <tr>
+            <td><strong>Order Id</strong></td>
+            <td><strong>Status</strong></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{order._id}}</td>
+            <td>{{order.status}}</td>
+            <td><button (click)="gotoDetail(order)">View Details</button></td>
+        </tr>
+    </tbody>
+</table>
+<!--<ul>
+    <li *ngFor="let order of orders" (click)="gotoDetail(order)">{{order.orderId}}</li>
+</ul>-->

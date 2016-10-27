@@ -1,0 +1,54 @@
+<button class="button-primary">Make Order</button>
+<div>
+	<table>
+		<tr>
+			<th>
+				Item Name
+			</th>
+
+			<th>
+				Item Price
+			</th>
+
+			<th>
+				Quantity
+			</th>
+			<th>
+				Select
+			</th>
+
+		</tr>
+		<tr *ngFor="let r of restaurant.menuItems">
+			<td>
+				{{r.itemName}}
+			</td>
+			<td>
+				{{r.itemPrice}}
+			</td>
+			<!--<td>
+            {{r.itemQuantity}}
+        </td>-->
+			<td>
+				<!--<input class="" [(ngModel)]= inputvalue name="txtPlace" />-->
+				<!--<select placeholder="select">
+       <option>0</option>
+        <option>1</option>
+          <option>2</option>
+            <option>3</option>
+              <option>4</option>
+                <option>5</option>
+                  <option>6</option>
+
+            </select>-->
+				<!--<input #value >-->
+                <select [(ngModel)]="selectedOption" (ngModelChange)="onChange($event)" name="s">
+                     <option [value] = "c" *ngFor="let c of pricelist" >{{c.val}}</option>
+                </select>
+			</td>
+			<td>
+				<input type="checkbox" />
+			</td>
+		</tr>
+	</table>
+    <!--<label> Total Price : </label>56-->
+</div>

@@ -1,0 +1,32 @@
+<form>
+	<!--<select [ngModel]="selectedOption" (ngModelChange) ="onChange($event)" name ="s">
+    <option [value] = "c" *ngFor="let c of ddlist" >{{c}}</option>
+  </select>-->
+	<input type="text" class="u-full-width" [(ngModel)]= inputvalue name="txtPlace" placeholder="Search for restaurants near you..." />
+	<button (click)="getRestaurantsByName(inputvalue, c)">Search </button>
+</form>
+<div *ngIf="restaurant">
+	<table>
+		<tr>
+			<th>
+				Restaurant Name
+			</th>
+			<th>
+				Location
+			</th>
+      <th>
+				Menu
+			</th>
+		</tr>
+		<tr *ngFor="let r of restaurant">
+			<td>
+				{{r.name | uppercase}}
+			</td>
+			<td>
+				{{r.address}}
+			</td>
+      <td>
+				<button (click) = "takeToMenu(r._id)" >MENU </button>
+			</td>
+	</table>
+</div>

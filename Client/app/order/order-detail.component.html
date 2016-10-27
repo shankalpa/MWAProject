@@ -1,0 +1,30 @@
+﻿<h5>{{title}}</h5>
+
+<fieldset>
+    <div *ngIf="order">
+        <label>Order Id: </label>{{order.orderId}}
+        <label>Status</label>{{order.status}}
+        <label>Total</label>{{order.total | currency}}
+        <hr />
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td><strong>Item Name</strong></td>
+                        <td><strong>Price</strong></td>
+                        <td><strong>Quanity</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of order.menuItems">
+                        <td>{{items.itemName}}</td>
+                        <td>{{items.itemPrice | currency}}</td>
+                        <td>{{items.itemQuantity}}</td>
+                        <td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</fieldset>
+
